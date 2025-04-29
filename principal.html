@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping del Sol - Menú</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/principal.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <div class="mini-logo">
+                    <div class="mini-rays-container" id="miniRays"></div>
+                    <div class="mini-logo-circle">
+                        <div class="mini-logo-text">delSol</div>
+                    </div>
+                </div>
+                <h1>Shopping del Sol</h1>
+            </div>
+  
+            <div class="user-menu">
+                <div class="user-info">
+                    <span class="welcome-message">Bienvenido,</span>
+                    <span class="user-name" id="userName">Usuario</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="welcome-container">
+            <h2>Bienvenido al Sistema del Sol ERP</h2>
+            <p>Seleccione una opción del menú para comenzar</p>
+        </div>
+        
+        <div class="dashboard-menu">
+            <div class="menu-item">
+                <div class="menu-icon">📊</div>
+                <h3>Estadísticas</h3>
+                <p>Ver reportes y estadísticas</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">🏪</div>
+                <h3>Inventario</h3>
+                <p>Gestionar inventario</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">👥</div>
+                <h3>Clientes</h3>
+                <p>Gestionar clientes</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">💰</div>
+                <h3>Ventas</h3>
+                <p>Registro de ventas</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Shopping del Sol - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/principal.js"></script>
+
+
+    <script>
+        // Bloquear clic derecho
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+        
+        // Bloquear teclas F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener('keydown', function(event) {
+            // F12
+            if (event.keyCode === 123) {
+                event.preventDefault();
+            }
+            // Ctrl+Shift+I
+            if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+                event.preventDefault();
+            }
+            // Ctrl+U
+            if (event.ctrlKey && event.keyCode === 85) {
+                event.preventDefault();
+            }
+        });
+        </script>
+</body>
+</html>

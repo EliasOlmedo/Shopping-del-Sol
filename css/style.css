@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+}
+
+.login-container {
+    background-color: #232323;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 15px;
+    background: radial-gradient(circle at center, #232323 30%, #1a1a1a 100%);
+}
+
+.logo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.logo-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.logo-text {
+    color: #f0ca61;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.rays-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: rotate 30s linear infinite;
+}
+ /* Con esto podemos agregarle movimineto al logo
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+*/
+.ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 2px;
+    width: 70px;
+    background: linear-gradient(90deg, #f0ca61, #e58e3d);
+    transform-origin: 0 0;
+}
+
+.login-body {
+    padding: 20px 30px 40px;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.welcome-text h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #f0ca61, #e58e3d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-text p {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+    color: #e0e0e0;
+}
+
+.input-group input:focus {
+    border-color: #e58e3d;
+    box-shadow: 0 0 0 3px rgba(229, 142, 61, 0.2);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.input-group label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #232323;
+    padding: 0 8px;
+    font-size: 14px;
+    color: #a0a0a0;
+    transition: all 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    color: #e58e3d;
+}
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0a0a0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.input-group i:hover {
+    color: #e58e3d;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #f0ca61, #e58e3d);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 50px;
+    width: 200px;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(229, 142, 61, 0.3);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.login-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.login-btn:hover::after {
+    left: 100%;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.forgot-password a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+    color: #e58e3d;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+    20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+.input-error {
+    border-color: #ff5252 !important;
+    animation: shake 0.5s;
+}
+
+.error-message {
+    color: #ff5252;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.show-error {
+    display: block;
+}
+
+.spinner {
+    display: inline-block; /* Que se comporte como un texto */
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px; /* Espaciado a la derecha del texto */
+    vertical-align: middle; /* Centrado verticalmente */
+    visibility: hidden; /* Oculto por defecto */
+    position: absolute;
+    
+}
+
+/* Para hacerlo girar */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Cuando el botón está cargando */
+.login-btn.loading .spinner {
+    visibility: visible;
+    align-items: center;
+}
+
+/* Y opcional: puedes ocultar el texto cuando esté cargando */
+.login-btn.loading span {
+    visibility: hidden;
+}
+
+
+

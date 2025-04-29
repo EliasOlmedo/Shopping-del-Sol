@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping del Sol - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="rays-container" id="rays"></div>
+                <div class="logo-circle">
+                    <div class="logo-text">delSol</div>
+                </div>
+            </div>
+        </div>
+        <div class="login-body">
+            <div class="welcome-text">
+                <h2>Shopping del Sol</h2>
+                <p>Inicia sesión para continuar</p>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder=" ">
+                    <label for="username">Ingresar Usuario</label>
+                    <i id="iconoUsuario"></i>
+                    <div class="error-message" id="usernameError">El usuario es obligatorio</div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder=" ">
+                    <label for="password">Ingresar Contraseña</label>
+                    <i id="passwordIcon" style="cursor: pointer;"></i>
+                    <div class="error-message" id="passwordError">La contraseña es incorrecta</div>
+                </div>
+                <!--Spinner--> 
+                <button type="submit" class="login-btn" id="loginButton">
+                    <span>Ingresar</span>
+                    <div class="spinner" id="spinner"></div>
+                </button>
+
+                <div class="error-message" id="apiError"></div>
+
+            </form>
+            <div class="forgot-password">
+                <a href="#" id="forgotLink">¿Olvidó su contraseña?</a>
+            </div>
+            
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+
+    <script>
+        // Bloquear clic derecho
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+        
+        // Bloquear teclas F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener('keydown', function(event) {
+            // F12
+            if (event.keyCode === 123) {
+                event.preventDefault();
+            }
+            // Ctrl+Shift+I
+            if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+                event.preventDefault();
+            }
+            // Ctrl+U
+            if (event.ctrlKey && event.keyCode === 85) {
+                event.preventDefault();
+            }
+        });
+        </script>
+        
+</body>
+</html>
